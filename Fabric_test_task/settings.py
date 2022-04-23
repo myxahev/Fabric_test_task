@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_message_sending.apps.AppMessageSendingConfig',
     'rest_framework',
+    'phone_field',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

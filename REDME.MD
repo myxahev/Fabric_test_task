@@ -15,3 +15,4 @@ docker run -it -p 6379:6379 redis
 celery -A Fabric_test_task worker -l info
 celery -A Fabric_test_task beat -l info
 
+*** Так же необходимо в проект добавить .env с параметрами Token и URL 

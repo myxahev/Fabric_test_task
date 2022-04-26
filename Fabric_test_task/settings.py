@@ -150,7 +150,7 @@ EMAIL_PORT = 587
 
 # REDIS related settings
 REDIS_HOST = '0.0.0.0'
-REDIS_PORT = '6380'   #'6379'
+REDIS_PORT = '6379'
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
@@ -159,9 +159,13 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 CELERY_BEAT_SCHEDULE = {
-    "send_beat_email": {
-        "task": "send_beat_email",
+    # "send_beat_email": {
+    #     "task": "send_beat_email",
+    #     "schedule": datetime.timedelta(minutes=60)
+    #     # "schedule": crontab(minute=0, hour=2)
+    # },
+    "send_message": {
+        "task": "send_message",
         "schedule": datetime.timedelta(minutes=1)
-        # "schedule": crontab(minute=0, hour=2)
     },
 }

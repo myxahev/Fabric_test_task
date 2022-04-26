@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from .serializers import ClientSerializer, MessageSerializer, MailingSerializer
 from .models import Client, Mailing, Message
 
-from .tasks import send_beat_email
 
 class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
